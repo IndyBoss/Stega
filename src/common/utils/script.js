@@ -1,3 +1,5 @@
+import table from "./table.json" with { type: "json" };
+
 $('button.encode, button.decode').click(function(event) {
   event.preventDefault();
 });
@@ -83,6 +85,8 @@ function encodeMessage() {
     'width': width,
     'height': height
   });
+
+  console.log(table)
 
   // Normalize the original image and draw it
   var original = originalContext.getImageData(0, 0, width, height);
