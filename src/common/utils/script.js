@@ -1,13 +1,11 @@
-import table from "./table.json" with { type: "json" };
-
-$('button.encode, button.decode').click(function(event) {
+$("button.encode, button.decode").click(function (event) {
   event.preventDefault();
 });
 
 function previewDecodeImage() {
-  var file = document.querySelector('input[name=decodeFile]').files[0];
+  var file = document.querySelector("input[name=decodeFile]").files[0];
 
-  previewImage(file, ".decode canvas", function() {
+  previewImage(file, ".decode canvas", function () {
     $(".decode").fadeIn();
   });
 }
@@ -18,7 +16,7 @@ function previewEncodeImage() {
   $(".images .nulled").hide();
   $(".images .message").hide();
 
-  previewImage(file, ".original canvas", function() {
+  previewImage(file, ".original canvas", function () {
     $(".images .original").fadeIn();
     $(".images").fadeIn();
   });
@@ -26,9 +24,9 @@ function previewEncodeImage() {
 
 function previewImage(file, canvasSelector, callback) {
   var reader = new FileReader();
-  var image = new Image;
+  var image = new Image();
   var $canvas = $(canvasSelector);
-  var context = $canvas[0].getContext('2d');
+  var context = $canvas[0].getContext("2d");
 
   if (file) {
     reader.readAsDataURL(file);
@@ -37,17 +35,17 @@ function previewImage(file, canvasSelector, callback) {
   reader.onloadend = function () {
     image.src = URL.createObjectURL(file);
 
-    image.onload = function() {
+    image.onload = function () {
       $canvas.prop({
-        'width': image.width,
-        'height': image.height
+        width: image.width,
+        height: image.height,
       });
 
       context.drawImage(image, 0, 0);
 
       callback();
-    }
-  }
+    };
+  };
 }
 
 function encodeMessage() {
@@ -56,9 +54,9 @@ function encodeMessage() {
 
   var text = $("textarea.message").val();
 
-  var $originalCanvas = $('.original canvas');
-  var $nulledCanvas = $('.nulled canvas');
-  var $messageCanvas = $('.message canvas');
+  var $originalCanvas = $(".original canvas");
+  var $nulledCanvas = $(".nulled canvas");
+  var $messageCanvas = $(".message canvas");
 
   var originalContext = $originalCanvas[0].getContext("2d");
   var nulledContext = $nulledCanvas[0].getContext("2d");
@@ -68,33 +66,28 @@ function encodeMessage() {
   var height = $originalCanvas[0].height;
 
   // Check if the image is big enough to hide the message
-  if ((text.length * 8) > (width * height * 3)) {
-    $(".error")
-      .text("Text too long for chosen image....")
-      .fadeIn();
+  if (text.length * 8 > width * height * 3) {
+    $(".error").text("Text too long for chosen image....").fadeIn();
 
     return;
   }
 
   $nulledCanvas.prop({
-    'width': width,
-    'height': height
+    width: width,
+    height: height,
   });
 
   $messageCanvas.prop({
-    'width': width,
-    'height': height
+    width: width,
+    height: height,
   });
-
-  console.log(table)
 
   // Normalize the original image and draw it
   var original = originalContext.getImageData(0, 0, width, height);
   var pixel = original.data;
-  console.log(original);
   for (var i = 0, n = pixel.length; i < n; i += 4) {
-    for (var offset =0; offset < 3; offset ++) {
-      if(pixel[i + offset] %2 != 0) {
+    for (var offset = 0; offset < 3; offset++) {
+      if (pixel[i + offset] % 2 !== 0) {
         pixel[i + offset]--;
       }
     }
@@ -107,25 +100,24 @@ function encodeMessage() {
     var binaryChar = text[i].charCodeAt(0).toString(2);
 
     // Pad with 0 until the binaryChar has a lenght of 8 (1 Byte)
-    while(binaryChar.length < 8) {
+    while (binaryChar.length < 8) {
       binaryChar = "0" + binaryChar;
     }
 
     binaryMessage += binaryChar;
   }
-  $('.binary textarea').text(binaryMessage);
+  $(".binary textarea").text(binaryMessage);
 
   // Apply the binary string to the image and draw it
   var message = nulledContext.getImageData(0, 0, width, height);
   pixel = message.data;
   counter = 0;
   for (var i = 0, n = pixel.length; i < n; i += 4) {
-    for (var offset =0; offset < 3; offset ++) {
+    for (var offset = 0; offset < 3; offset++) {
       if (counter < binaryMessage.length) {
         pixel[i + offset] += parseInt(binaryMessage[counter]);
         counter++;
-      }
-      else {
+      } else {
         break;
       }
     }
@@ -135,19 +127,24 @@ function encodeMessage() {
   $(".binary").fadeIn();
   $(".images .nulled").fadeIn();
   $(".images .message").fadeIn();
-};
+}
 
 function decodeMessage() {
-  var $originalCanvas = $('.decode canvas');
+  var $originalCanvas = $(".decode canvas");
   var originalContext = $originalCanvas[0].getContext("2d");
 
-  var original = originalContext.getImageData(0, 0, $originalCanvas.width(), $originalCanvas.height());
+  var original = originalContext.getImageData(
+    0,
+    0,
+    $originalCanvas.width(),
+    $originalCanvas.height()
+  );
   var binaryMessage = "";
   var pixel = original.data;
   for (var i = 0, n = pixel.length; i < n; i += 4) {
-    for (var offset =0; offset < 3; offset ++) {
+    for (var offset = 0; offset < 3; offset++) {
       var value = 0;
-      if(pixel[i + offset] %2 != 0) {
+      if (pixel[i + offset] % 2 != 0) {
         value = 1;
       }
 
@@ -166,6 +163,6 @@ function decodeMessage() {
     output += String.fromCharCode(c);
   }
 
-  $('.binary-decode textarea').text(output);
-  $('.binary-decode').fadeIn();
-};
+  $(".binary-decode textarea").text(output);
+  $(".binary-decode").fadeIn();
+}
