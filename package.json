@@ -22,7 +22,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "git add build -f && git commit -m 'deploy' && git push origin deploy && git reset --soft HEAD~1",
+    "deploy": "git add build -f && git commit -m 'deploy' && git push origin main:deploy && git reset --soft HEAD~1",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
