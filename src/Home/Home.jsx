@@ -24,13 +24,15 @@ export default function Home() {
         <Button onClick={() => setError("setError")}>setError</Button>
         <Button onClick={() => setWarning("setWarning")}>setWarning</Button>
         <Button onClick={() => setSuccess("setSuccess")}>setSuccess</Button>
-        <Button
-          onClick={() =>
-            loginFunc("indy.bosschem@gmail.com", "FloepieDoepie10")
-          }
-        >
-          login
-        </Button>
+        <div>
+          <Button
+            onClick={() =>
+              loginFunc("indy.bosschem@gmail.com", "FloepieDoepie10")
+            }
+          >
+            login
+          </Button>
+        </div>
       </div>
     </AppWrapper>
   );
