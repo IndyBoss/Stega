@@ -6,8 +6,8 @@ export default function Footer() {
     <div>
       <Link to={"/encode"}>
         <span>Encode</span>
-        <span>This is the footer</span>
       </Link>
+      <span>This is the footer</span>
     </div>
   );
 }
