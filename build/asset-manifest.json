@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Stega/static/css/main.53fb4ec8.css",
-    "main.js": "/Stega/static/js/main.c8eb144c.js",
-    "index.html": "/Stega/index.html",
-    "main.53fb4ec8.css.map": "/Stega/static/css/main.53fb4ec8.css.map",
-    "main.c8eb144c.js.map": "/Stega/static/js/main.c8eb144c.js.map"
+    "main.css": "./static/css/main.53fb4ec8.css",
+    "main.js": "./static/js/main.93feabf1.js",
+    "index.html": "./index.html",
+    "main.53fb4ec8.css.map": "./static/css/main.53fb4ec8.css.map",
+    "main.93feabf1.js.map": "./static/js/main.93feabf1.js.map"
   },
   "entrypoints": [
     "static/css/main.53fb4ec8.css",
-    "static/js/main.c8eb144c.js"
+    "static/js/main.93feabf1.js"
   ]
 }
