@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <AppWrapper>
       <div>
-        <h2>This is the homepage</h2>
+        <h2>This is the Homepage</h2>
         <p>Have you seen the rest yet?</p>
         <Button onClick={() => setMessage("setMessage")}>setMessage</Button>
         <Button onClick={() => setError("setError")}>setError</Button>
