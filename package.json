@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploys": "git pull && git checkout deploy && git pull && git merge main && git push && yarn build && git add build -f && git commit -m 'deploy' && git push && git checkout main && git pull"
+    "deploys": "git pull && git checkout deploy && git pull && git merge main && yarn build && git add build -f && git commit -m 'deploy' && git push && git checkout main && git pull"
   },
   "eslintConfig": {
     "extends": [
