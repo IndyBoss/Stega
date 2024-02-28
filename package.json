@@ -2,7 +2,7 @@
   "name": "stega",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://indyboss.github.io/Stega",
+  "homepage": ".",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -22,11 +22,11 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "git add build -f && git commit -m 'deploy' && git push origin main:deploy && git reset --soft HEAD~1",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "git pull && git checkout deploy && git pull && git merge main && yarn build && git add build -f && git commit -m 'deploy' && git push && git checkout main && git pull"
   },
   "eslintConfig": {
     "extends": [
