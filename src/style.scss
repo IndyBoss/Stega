@@ -1,7 +1,12 @@
-// Montserrat weight: Use a value from 100 to 900
+$pri: #1d1d1d;
+$sec: #36b99e;
 
+$prilight: #303030;
+$seclight: rgba(58, 187, 161, 0.705);
+
+// Montserrat weight: Use a value from 100 to 900
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -53,6 +58,50 @@
       &.success {
         background-color: #4caf50;
       }
+    }
+  }
+}
+
+// BUTTON
+.MuiButton-root {
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  padding: 0.5rem 1.4rem 0.6rem 1.4rem !important;
+  color: $sec !important;
+  margin: 0 0.7rem !important;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  &.Mui-disabled {
+    color: $prilight !important;
+  }
+  .MuiTouchRipple-root {
+    color: $sec !important;
+  }
+
+  &:hover {
+    background-color: white;
+  }
+
+  &.primary {
+    color: $sec !important;
+    background-color: $pri !important;
+    &.Mui-disabled {
+      color: $prilight !important;
+    }
+
+    .MuiTouchRipple-root {
+      color: $sec !important;
+    }
+  }
+
+  &.secondary {
+    color: white !important;
+    background-color: $sec !important;
+    &.Mui-disabled {
+      color: $seclight !important;
+    }
+
+    .MuiTouchRipple-root {
+      color: $pri !important;
     }
   }
 }

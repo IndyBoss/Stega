@@ -20,12 +20,17 @@ export default function Home() {
       <div>
         <h2>This is the Homepage</h2>
         <p>Have you seen the rest yet?</p>
-        <Button onClick={() => setMessage("setMessage")}>setMessage</Button>
-        <Button onClick={() => setError("setError")}>setError</Button>
-        <Button onClick={() => setWarning("setWarning")}>setWarning</Button>
-        <Button onClick={() => setSuccess("setSuccess")}>setSuccess</Button>
+        <Button className="primary" onClick={() => setMessage("setMessage")}>
+          Message
+        </Button>
+        <Button className="primary" onClick={() => setError("setError")}>
+          Error
+        </Button>
+        <Button onClick={() => setWarning("setWarning")}>Warning</Button>
+        <Button onClick={() => setSuccess("setSuccess")}>Success</Button>
         <div>
           <Button
+            className="secondary"
             onClick={() =>
               loginFunc("indy.bosschem@gmail.com", "FloepieDoepie10")
             }
