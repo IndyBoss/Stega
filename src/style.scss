@@ -1,0 +1,58 @@
+// Montserrat weight: Use a value from 100 to 900
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+// ----- Snackbar styling -----
+.notistack-Snackbar {
+  > div {
+    position: relative;
+    padding: 0 !important;
+    height: 100%;
+    width: 100%;
+
+    .snackbar-close {
+      color: white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      svg {
+        height: 150%;
+        width: 150%;
+      }
+    }
+  }
+
+  #notistack-snackbar {
+    padding: 0 !important;
+    height: 100%;
+    width: 100%;
+
+    .snackbar {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      padding: 0.25rem 1rem;
+      display: flex;
+      align-items: center;
+
+      &.message {
+        background-color: #1d1d1d;
+      }
+      &.error {
+        background-color: #f44336;
+      }
+      &.warning {
+        background-color: #f37d1b;
+      }
+      &.success {
+        background-color: #4caf50;
+      }
+    }
+  }
+}
