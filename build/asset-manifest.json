@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Stega/static/css/main.53fb4ec8.css",
+    "main.js": "/Stega/static/js/main.c8eb144c.js",
+    "index.html": "/Stega/index.html",
+    "main.53fb4ec8.css.map": "/Stega/static/css/main.53fb4ec8.css.map",
+    "main.c8eb144c.js.map": "/Stega/static/js/main.c8eb144c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53fb4ec8.css",
+    "static/js/main.c8eb144c.js"
+  ]
+}
