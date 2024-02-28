@@ -6,7 +6,7 @@ function App() {
   document.title = "My Steganography manager";
   return (
     <SnackbarProvider maxSnack={4} autoHideDuration={3000}>
-      <BrowserRouter basename={"/Stega"}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           {/* ERROR */}
