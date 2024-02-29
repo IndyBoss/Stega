@@ -1,2 +1,2 @@
-let thisUsernameEl = document.querySelector('[data-foo="value"]');
-thisUsernameEl.value = "Dit is een test";
+let thisUsernameEl = document.querySelector('[autocomplete="username"]');
+if (thisUsernameEl) thisUsernameEl.value = "Dit is een test";
