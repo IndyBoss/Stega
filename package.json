@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fire": "powershell ./deploy.ps1",
-    "ext": "powershell ./deployExtension.ps1"
+    "ext": "powershell ./deployExtension.ps1",
+    "both": "yarn fire && yarn ext"
   },
   "eslintConfig": {
     "extends": [
