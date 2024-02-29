@@ -1,15 +1,9 @@
 {
-  "version": "1.0.0",
-  "manifest_version": 3,
   "name": "Stega",
   "short_name": "Stega",
   "background_color": "#1D1D1D",
   "theme_color": "#1D1D1D",
   "description": "My Steganography manager",
-  "action": {
-    "default_popup": "js/index.html",
-    "default_title": "Stega"
-  },
   "icons": [
     {
       "src": "/favicon.ico",
