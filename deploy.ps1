@@ -2,7 +2,7 @@ Write-Host ""
 Write-Host "--- Builder started ---" -ForegroundColor cyan
 Write-Host ""
 $originalLocation = Get-Location
-$buildStart = Get-Date -Format "MM/dd/yyyy HH:mm"
+$buildStart = Get-Date -Format "dd/MM/yyyy HH:mm"
 $defaultPath = "W:\Business"
 
 Write-Host ""

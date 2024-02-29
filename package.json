@@ -26,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "fire": "powershell ./deploy.ps1"
+    "fire": "powershell ./deploy.ps1",
+    "ext": "powershell ./deployExtension.ps1"
   },
   "eslintConfig": {
     "extends": [
