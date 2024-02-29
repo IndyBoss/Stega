@@ -11,6 +11,7 @@
 # production
 /build
 /public/icons
+/extension
 
 # misc
 .DS_Store
